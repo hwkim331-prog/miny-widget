@@ -21,8 +21,10 @@ const initializeDdayCounterApp = () => {
 };
 
 const setAppStyles = () => {
-  rootElement.style.backgroundColor = `#${params.get("background")}` ?? "";
-  rootElement.style.color = `#${params.get("text")}` ?? "";
+  const bg = params.get("background");
+  const tx = params.get("text");
+  if (bg) rootElement.style.backgroundColor = `#${bg}`;
+  if (tx) rootElement.style.color = `#${tx}`;
 };
 
 const setContent = () => {
