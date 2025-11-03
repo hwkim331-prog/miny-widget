@@ -26,5 +26,5 @@ body {
   align-items: flex-end;
 }
 .dday-remaining {
-  color: #FF4B4B; /* 남은 날짜 색상 (원하는 색상 코드로 바꾸기) */
+  color: #1729EC; /* 남은 날짜 색상 (원하는 색상 코드로 바꾸기) */
 }
