@@ -48,6 +48,7 @@ const setDate = () => {
     console.error("Invalid Date: ", date);
     rootElement.querySelector(".date").textContent = "Invalid Date";
     rootElement.querySelector(".counter").textContent = "ERROR";
+    return;
   }
 
   const year = parseInt(date.slice(0, 4), 10);
@@ -62,5 +63,12 @@ const setDate = () => {
 
   const prefix = diff > 0 ? "D+" : "D";
   const dday = diff === 0 ? "TODAY" : prefix + diff;
-  rootElement.querySelector(".counter").textContent = dday;
+  const counterEl = rootElement.querySelector(".counter");
+  counterEl.textContent = "";                  // 기존 텍스트 비우기
+
+  const span = document.createElement("span"); // <span> 만들고
+  span.className = "dday-remaining";           // 클래스 부여
+  span.textContent = dday;                     // 텍스트 넣기
+
+  counterEl.appendChild(span);                 // .counter 안에 삽입
 };
